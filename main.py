@@ -8,7 +8,7 @@ module.
 There are a number of utility commands being showcased here.'''
 bot = commands.Bot(command_prefix='?', description=description)
 config = configparser.ConfigParser()
-config.read(config.ini)
+config.read('config.ini')
 
 @bot.event
 async def on_ready():
