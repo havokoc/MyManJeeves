@@ -3,9 +3,7 @@ from discord.ext import commands
 import random
 import configparser
 
-description = '''An example bot to showcase the discord.ext.commands extension
-module.
-There are a number of utility commands being showcased here.'''
+description = '''hej, välkommen till denna bot. My Man Jeeves kommer att hjälpa dig med en massa saker som du troligtvis inte behöver hjälp med.'''
 config = configparser.ConfigParser()
 config.read('config.ini')
 bot = commands.Bot(command_prefix=config['Bot']['prefix'], description=description)
@@ -60,7 +58,7 @@ async def _bot():
 	
 @bot.command(description='For when you wanna knugen')
 async def knugen():
-    """Chooses between multiple choices."""
+    """Chooses between multiple knugen pics."""
     knugenLinks = [
 	"http://i.imgur.com/dG0q4a9.png",
     "http://i.imgur.com/pCtYLDP.jpg",
@@ -70,7 +68,9 @@ async def knugen():
     "http://i.imgur.com/Jy3g2Q6.jpg",
     "http://i.imgur.com/bpwp3rb.jpg",
     "http://i.imgur.com/Y0ylzT5.jpg",
-	"http://i.imgur.com/AlC76nS.png"
+    "http://i.imgur.com/AlC76nS.png",
+    "http://i.imgur.com/fkAAgh1.gifv",
+    "https://i.imgur.com/qdzHLJA.jpg",
     ]
     await bot.say(random.choice(knugenLinks))
 
