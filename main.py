@@ -6,9 +6,9 @@ import configparser
 description = '''An example bot to showcase the discord.ext.commands extension
 module.
 There are a number of utility commands being showcased here.'''
-bot = commands.Bot(command_prefix='?', description=description)
 config = configparser.ConfigParser()
 config.read('config.ini')
+bot = commands.Bot(command_prefix=config['Bot']['prefix'], description=description)
 
 @bot.event
 async def on_ready():
@@ -39,11 +39,6 @@ async def choose(*choices : str):
     """Chooses between multiple choices."""
     await bot.say(random.choice(choices))
 
-@bot.command()
-async def repeat(times : int, content='repeating...'):
-    """Repeats a message multiple times."""
-    for i in range(times):
-        await bot.say(content)
 
 @bot.command()
 async def joined(member : discord.Member):
@@ -62,5 +57,14 @@ async def cool(ctx):
 async def _bot():
     """Is the bot cool?"""
     await bot.say('Yes, the bot is cool.')
+	
+@bot.command(description='For when you wanna knugen')
+async def knugen():
+    """Chooses between multiple choices."""
+    knugenLinks = [
+    'a',
+    'lkhh'
+    ]
+    await bot.say(random.choice(knugenLinks))
 
 bot.run(config['Bot']['token'])
