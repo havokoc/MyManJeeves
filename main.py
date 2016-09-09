@@ -3,7 +3,7 @@ import asyncio
 import random
 import configparser
 
-description = '''hej, välkommen till denna bot. My Man Jeeves kommer att hjälpa dig med en massa saker som du troligtvis inte behöver hjälp med.'''
+description = '''TODO: -list(Minecraft), -hojj(STENBERG), -help/My Man..., -INSERTMORECOMMANDSHERE'''
 config = configparser.ConfigParser()
 config.read('config.ini')
 
