@@ -17,7 +17,7 @@ def main(argv):
 
     except getopt.GetoptError:
         print("\nJeeves help section.")
-        print("These are the options we offer\n")
+        print("These are the option Jeeves can offer\n")
         print("-D               | Uses the default config file path (config/config.ini)")
         print("-C <config file> | Specifies the path to the config file")
         sys.exit(2)
