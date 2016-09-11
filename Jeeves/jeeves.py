@@ -38,4 +38,4 @@ def RunBot(config_file):
     client.run(config['Bot']['token'])
 
 if __name__ == "__main__":
-    RunBot('config/config.ini')
+    print("Please use the start.py script in the root directory instead")

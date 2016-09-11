@@ -13,13 +13,13 @@ def main(argv):
         # : i options och = i långa options betyder att det kommer ett argument efter det
         # som t.ex. -o fil.txt, -v video.mkv, -a audio.mp3.
 
-        opts, args = getopt.getopt(argv,"hsc:",["help", "default", "config="])
+        opts, args = getopt.getopt(argv,"hDC:",["help", "default", "config="])
 
     except getopt.GetoptError:
-        print("Jeeves help section.")
+        print("\nJeeves help section.")
         print("These are the options we offer\n")
-        print("-S               | Uses the default config file path (config/config.ini)")
-        print("-c <config file> | Specifies the path to the config file")
+        print("-D               | Uses the default config file path (config/config.ini)")
+        print("-C <config file> | Specifies the path to the config file")
         sys.exit(2)
 
     # opts har två arrays. opt och arg.
@@ -31,14 +31,14 @@ def main(argv):
         if opt in ("-h", "--help"):
             print("\nJeeves help section.")
             print("These are the options Jeeves can offer\n")
-            print("-S               | Uses the default config file path (config/config.ini)")
-            print("-c <config file> | Specifies the path to the config file")
+            print("-D               | Uses the default config file path (config/config.ini)")
+            print("-C <config file> | Specifies the path to the config file")
             sys.exit()
             # Eftersom det är en inställning som inte kräver något mer argument (så som vägen till en fil)
             # så körs den utan att använda arrayen arg.
 
         # Här matchade våran lista också en av argumenten i arrayen opt
-        elif opt in ("-c", "--config"):
+        elif opt in ("-C", "--config"):
             print("Starting Jeeves with config file %s" % (arg))
             RunBot(arg)
             # Eftersom detta är en inställning som kräver ett till argument efter inställningen
@@ -46,12 +46,15 @@ def main(argv):
             # e.g. #1 "python start.py -c config.ini" så är arg "config.ini"
             # e.g. #2 "python start.py -c blaha.ini" så är arg "blaha.ini"
 
-        elif opt in ("-S", "--default"):
+        elif opt in ("-D", "--default"):
             print("Starting Jeeves with default config file")
             RunBot('config/config.ini')
 
-        else:
-            assert False, "Nonexisting option"
+    if len(sys.argv) == 1:
+        print("\nJeeves help section.")
+        print("These are the options Jeeves can offer\n")
+        print("-D               | Uses the default config file path (config/config.ini)")
+        print("-C <config file> | Specifies the path to the config file")
 
 if __name__ == "__main__":
     main(sys.argv[1:])

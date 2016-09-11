@@ -8,7 +8,4 @@ setup.py is used for e.g. distributing it through the package manager.
 
 Makefile "make is a incredibly useful tool for defining generic and platform agnostic tasks for your project"
 
-
-```python
-python start.py -h
-```
+`python start.py`
