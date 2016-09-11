@@ -3,10 +3,10 @@ import asyncio
 import random
 import configparser
 
-def RunBot():
+def RunBot(config_file):
     description = '''TODO: -list(Minecraft), -hojj(STENBERG), -help/My Man..., -INSERTMORECOMMANDSHERE'''
     config = configparser.ConfigParser()
-    config.read('config.ini')
+    config.read(config_file)
 
     client = discord.Client()
 
@@ -38,4 +38,4 @@ def RunBot():
     client.run(config['Bot']['token'])
 
 if __name__ == "__main__":
-    RunBot()
+    RunBot('config/config.ini')
