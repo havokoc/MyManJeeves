@@ -1,5 +1,7 @@
 # TODO list for Jeeves.
 
+`flytta alla länkar i koden till egen fil`
+
 ## Fun Commands
 
 `something`
