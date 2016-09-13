@@ -4,7 +4,6 @@ import random
 import configparser
 
 def RunBot(config_file):
-    description = '''TODO: -list(Minecraft), -hojj(STENBERG), -help/My Man..., -INSERTMORECOMMANDSHERE'''
     config = configparser.ConfigParser()
     config.read(config_file)
 

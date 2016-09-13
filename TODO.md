@@ -3,8 +3,11 @@
 ## Fun Commands
 
 `something`
+`-hojj`
 
 ## Useful Commands
+
+`-avatar`
 
 ### Eithon
 
