@@ -2,10 +2,15 @@
 
 `flytta alla länkar i koden till egen fil`
 
+`Logging`
+
 ## Fun Commands
 
 `something`
+
 `-hojj`
+
+`harambe`
 
 ## Useful Commands
 
@@ -20,3 +25,7 @@
 ## Settings
 
 `Eithon Server id`
+
+## Misc.
+
+`permissions`
