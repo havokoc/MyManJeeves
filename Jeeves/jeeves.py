@@ -19,7 +19,7 @@ def RunBot(config_file):
     @client.event
     async def on_message(message):
         if message.channel.id == "123410749765713920":
-            if message.content.startswith('-knugen'):
+            if message.content.startswith('%sknugen' % config['Bot']['prefix']):
                 with open('config/data.json') as data_file:
                     data = json.loads(data_file.read())
                     await client.send_message(message.channel, random.choice(data['knugenLinks']))
