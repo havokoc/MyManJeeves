@@ -3,8 +3,10 @@ import asyncio
 import random
 import configparser
 import json
+import logging
 
 def RunBot(config_file):
+
     config = configparser.ConfigParser()
     config.read(config_file)
 
@@ -16,6 +18,8 @@ def RunBot(config_file):
         print('Logged in as %s (%s)' % (client.user.name, client.user.id))
         print('------')
 
+
+
     @client.event
     async def on_message(message):
         if message.channel.id == "123410749765713920":
@@ -23,6 +27,7 @@ def RunBot(config_file):
                 with open('config/data.json') as data_file:
                     data = json.loads(data_file.read())
                     await client.send_message(message.channel, random.choice(data['knugenLinks']))
+                    print('[%s] %s ran a command (knugen)' % ('k', message.author.name))
 
     client.run(config['Bot']['token'])
 
