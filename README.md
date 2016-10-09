@@ -11,4 +11,4 @@ Makefile "make is a incredibly useful tool for defining generic and platform agn
 `python start.py`
 
 
-Eithon test 2.
+Eithon test.
