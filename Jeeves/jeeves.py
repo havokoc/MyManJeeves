@@ -4,6 +4,8 @@ import random
 import configparser
 import json
 import logging
+from datetime import datetime
+from .console import console
 
 def RunBot(config_file):
 
@@ -27,7 +29,7 @@ def RunBot(config_file):
                 with open('config/data.json') as data_file:
                     data = json.loads(data_file.read())
                     await client.send_message(message.channel, random.choice(data['knugenLinks']))
-                    print('[%s] %s ran a command (knugen)' % ('k', message.author.name))
+                    print('[%s] %s ran a command (knugen)' % (datetime.now().time(), message.author.name))
 
     client.run(config['Bot']['token'])
 
