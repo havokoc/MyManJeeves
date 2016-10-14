@@ -5,7 +5,6 @@ import configparser
 import json
 import logging
 from datetime import datetime
-from .console import console
 
 def RunBot(config_file):
 
