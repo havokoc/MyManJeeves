@@ -1,3 +1,4 @@
+#Imports - Laddar API:n och moduler som gör dvelopment enklare
 import discord
 import asyncio
 import random
@@ -5,12 +6,12 @@ import configparser
 import json
 import logging
 from datetime import datetime
+#HOJJ
 
 def RunBot(config_file):
 
     config = configparser.ConfigParser()
     config.read(config_file)
-
     client = discord.Client()
 
     @client.event
@@ -24,6 +25,7 @@ def RunBot(config_file):
     @client.event
     async def on_message(message):
         if message.channel.id == "123410749765713920":
+            #Command - Knugen
             if message.content.startswith('%sknugen' % config['Bot']['prefix']):
                 with open('config/data.json') as data_file:
                     data = json.loads(data_file.read())
