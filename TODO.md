@@ -2,8 +2,6 @@
 
 `flytta alla länkar i koden till egen fil`
 
-`Logging` - Class
-
 ## Fun Commands
 
 `something`
