@@ -8,8 +8,16 @@ import logging
 from datetime import datetime
 #HOJJ
 
-def RunBot(config_file):
+#Loggingclassen som ska användas för resen av alla commands
+class loggingFunc(object):
+    def __init__(self, command, user):
+        self.command = command
+        self.user = user
+    def __str__(self):
+        return '[%s] %s ran a command (%s)' % (datetime.now().time(), self.user, self.command)
 
+def RunBot(config_file):
+    #Laddar config
     config = configparser.ConfigParser()
     config.read(config_file)
     client = discord.Client()
@@ -21,7 +29,6 @@ def RunBot(config_file):
         print('------')
 
 
-
     @client.event
     async def on_message(message):
         if message.channel.id == "123410749765713920":
@@ -30,7 +37,7 @@ def RunBot(config_file):
                 with open('config/data.json') as data_file:
                     data = json.loads(data_file.read())
                     await client.send_message(message.channel, random.choice(data['knugenLinks']))
-                    print('[%s] %s ran a command (knugen)' % (datetime.now().time(), message.author.name))
+                    print(loggingFunc("knugen", message.author.name))
 
     client.run(config['Bot']['token'])
 

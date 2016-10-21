@@ -2,7 +2,7 @@
 
 `flytta alla länkar i koden till egen fil`
 
-`Logging`
+`Logging` - Class
 
 ## Fun Commands
 
@@ -17,6 +17,8 @@
 `-avatar`
 
 ### Eithon
+
+`MySql?`
 
 `!list` - Shows the users currently playing on Eithons Minecraft server.
 
