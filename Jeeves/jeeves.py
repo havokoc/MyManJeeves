@@ -1,4 +1,4 @@
-#Imports - Laddar API:n och moduler som gör dvelopment enklare
+#Imports - Laddar API:n och moduler som gör development enklare
 import discord
 import asyncio
 import random
