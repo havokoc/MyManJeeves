@@ -39,6 +39,10 @@ def RunBot(config_file):
                     await client.send_message(message.channel, random.choice(data['knugenLinks']))
                     print(loggingFunc("knugen", message.author.name))
 
+            if message.content.startswith('%savatar' % config['Bot']['prefix']):
+                await client.send_message(message.channel, message.author.avatar_url)
+                print(loggingFunc("avatar", message.author.name))
+
     client.run(config['Bot']['token'])
 
 if __name__ == "__main__":
