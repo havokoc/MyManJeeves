@@ -40,8 +40,12 @@ def RunBot(config_file):
                     print(loggingFunc("knugen", message.author.name))
 
             if message.content.startswith('%savatar' % config['Bot']['prefix']):
-                await client.send_message(message.channel, message.author.avatar_url)
-                print(loggingFunc("avatar", message.author.name))
+                if len(message.content.split()) < 2:
+                    await client.send_message(message.channel, message.author.avatar_url)
+                    print(loggingFunc("avatar", message.author.name))
+                else:
+                    await client.send_message(message.channel, message.mentions[0].avatar_url)
+                    print(loggingFunc("avatar", message.author.name))
 
     client.run(config['Bot']['token'])
 
