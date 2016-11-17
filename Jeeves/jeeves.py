@@ -38,7 +38,7 @@ def RunBot(config_file):
                     data = json.loads(data_file.read())
                     await client.send_message(message.channel, random.choice(data['knugenLinks']))
                     print(loggingFunc("knugen", message.author.name))
-
+            #Command - Avatar
             if message.content.startswith('%savatar' % config['Bot']['prefix']):
                 if len(message.content.split()) < 2:
                     await client.send_message(message.channel, message.author.avatar_url)
@@ -46,7 +46,8 @@ def RunBot(config_file):
                 else:
                     await client.send_message(message.channel, message.mentions[0].avatar_url)
                     print(loggingFunc("avatar", message.author.name))
-
+            #Command - X
+            
     client.run(config['Bot']['token'])
 
 if __name__ == "__main__":
