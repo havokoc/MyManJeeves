@@ -36,18 +36,27 @@ def RunBot(config_file):
             if message.content.startswith('%sknugen' % config['Bot']['prefix']):
                 with open('config/data.json') as data_file:
                     data = json.loads(data_file.read())
-                    await client.send_message(message.channel, random.choice(data['knugenLinks']))
+                    #await client.send_message(message.channel, random.choice(data['knugenLinks']))
+                    embed = discord.Embed(title='Välfärden is here again!', colour=0xEDC922)
+                    embed.set_image(url=random.choice(data['knugenLinks']))
+                    await client.send_message(message.channel, embed=embed)
                     print(loggingFunc("knugen", message.author.name))
             #Command - Avatar
             if message.content.startswith('%savatar' % config['Bot']['prefix']):
                 if len(message.content.split()) < 2:
-                    await client.send_message(message.channel, message.author.avatar_url)
+                    embed = discord.Embed(title='%s\'s avatar' % message.author.name, colour=0xEDC922)
+                    #embed.set_image(url='https://cdn.discordapp.com/avatars/'+message.author.id+'/'+message.author.avatar+'.gif')
+                    embed.set_image(url=message.author.avatar_url)
+                    await client.send_message(message.channel, embed=embed)
                     print(loggingFunc("avatar", message.author.name))
                 else:
-                    await client.send_message(message.channel, message.mentions[0].avatar_url)
+                    embed = discord.Embed(title='%s\'s avatar' % message.mentions[0].name, colour=0xEDC922)
+                    #embed.set_image(url='https://cdn.discordapp.com/avatars/'+message.mentions[0].id+'/'+message.mentions[0].avatar+'.gif')
+                    embed.set_image(url=message.mentions[0].avatar_url)
+                    await client.send_message(message.channel, embed=embed)
                     print(loggingFunc("avatar", message.author.name))
             #Command - X
-            
+
     client.run(config['Bot']['token'])
 
 if __name__ == "__main__":
