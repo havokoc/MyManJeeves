@@ -31,7 +31,7 @@ def RunBot(config_file):
 
     @client.event
     async def on_message(message):
-        if message.channel.id == "123410749765713920":
+        if message.channel.id == "123410749765713920" or "139430532437114880":
             #Command - Knugen
             if message.content.startswith('%sknugen' % config['Bot']['prefix']):
                 with open('config/data.json') as data_file:
