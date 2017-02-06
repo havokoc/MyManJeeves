@@ -55,6 +55,15 @@ def RunBot(config_file):
                     embed.set_image(url=message.mentions[0].avatar_url)
                     await client.send_message(message.channel, embed=embed)
                     print(loggingFunc("avatar", message.author.name))
+            if message.content.startswith('%shonk' % config['Bot']['prefix']):
+                if message.author.voice.voice_channel == None:
+                    await client.send_message(message.channel, "You are not in a voice channel.")
+                else:
+                    voice = await client.join_voice_channel(message.author.voice.voice_channel)
+                    player = await voice.create_ytdl_player('https://www.youtube.com/watch?v=4Iut-7RzwkQ')
+                    player.start()
+                    player.stop()
+                    voice.disconnect()
             #Command - X
 
     client.run(config['Bot']['token'])
